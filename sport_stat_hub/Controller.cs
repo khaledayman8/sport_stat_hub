@@ -1,24 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using System.Windows.Forms;
 
 namespace DBapplication
 {
     public class Controller
     {
         DBManager dbMan;
+
         public Controller()
         {
-            dbMan = new DBManager();
+            string connString = @"YOUR_CONNECTION_STRING_HERE";
+            dbMan = new DBManager(connString);
         }
 
         public void TerminateConnection()
         {
-            dbMan.CloseConnection();
+            // nothing required now (connections are auto-closed)
         }
-
+        public DataTable CheckLogin(string username, string password)
+        {
+            string query = $"SELECT * FROM Admins WHERE username = '{username}' AND password = '{password}'";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

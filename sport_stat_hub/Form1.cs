@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBapplication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,18 +32,19 @@ namespace sport_stat_hub
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (result == null)
+            Controller controller = new Controller();
+
+            DataTable dt = controller.CheckLogin(textBox1.Text, textBox2.Text);
+
+            if (dt == null || dt.Rows.Count == 0)
             {
-                lblError.Text = "Admin username not found!";
-                lblError.Visible = true;
-            }
-            else if (result.ToString() != textBox2.Text)
-            {
-                lblError.Text = "Admin password is incorrect!";
+                lblError.Text = "Invalid username or password!";
                 lblError.Visible = true;
             }
             else
             {
+                lblError.Visible = false;
+
                 WelcomForm f = new WelcomForm(textBox1.Text);
                 f.Show();
                 this.Hide();

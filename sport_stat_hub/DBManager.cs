@@ -1,99 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
 using System.Data;
-using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DBapplication
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"";
-        SqlConnection myConnection;
+        private string connectionString;
 
-        public DBManager()
+        public DBManager(string connString)
         {
-            myConnection = new SqlConnection(DB_Connection_String);
-            try
-            {
-                myConnection.Open();
-                Console.WriteLine("The DB connection is opened successfully");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("The DB connection is failed");
-                Console.WriteLine(e.ToString());
-            }
+            connectionString = connString;
+        }
+
+        private SqlConnection CreateConnection()
+        {
+            return new SqlConnection(connectionString);
         }
 
         public int ExecuteNonQuery(string query)
         {
-            try
+            using (SqlConnection conn = CreateConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
-                return myCommand.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return 0;
+                conn.Open();
+                return cmd.ExecuteNonQuery();
             }
         }
 
         public DataTable ExecuteReader(string query)
         {
-            try
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = CreateConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
-                SqlDataReader reader = myCommand.ExecuteReader();
-                if (reader.HasRows)
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    DataTable dt = new DataTable();
                     dt.Load(reader);
-                    reader.Close();
-                    return dt;
-                }
-                else
-                {
-                    return null;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return null;
-            }
+
+            return dt;
         }
 
         public object ExecuteScalar(string query)
         {
-            try
+            using (SqlConnection conn = CreateConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
-                return myCommand.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return 0;
+                conn.Open();
+                return cmd.ExecuteScalar();
             }
         }
-
-        public void CloseConnection()
-        {
-            try
-            {
-                myConnection.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
-
     }
 }
-;
