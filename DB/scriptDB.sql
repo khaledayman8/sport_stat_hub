@@ -1,0 +1,4 @@
+CREATE DATABASE SportHubDB;
+GO
+USE SportHubDB;
+GO
