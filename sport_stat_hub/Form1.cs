@@ -45,7 +45,7 @@ namespace sport_stat_hub
             {
                 lblError.Visible = false;
 
-                WelcomForm f = new WelcomForm(textBox1.Text);
+                AthleteForm f = new AthleteForm(textBox1.Text);
                 f.Show();
                 this.Hide();
             }
