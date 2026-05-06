@@ -52,6 +52,12 @@
     <Compile Include="AthleteForm.Designer.cs">
       <DependentUpon>AthleteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoachDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoachDashboard.Designer.cs">
+      <DependentUpon>CoachDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Form1.cs">
@@ -64,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AthleteForm.resx">
       <DependentUpon>AthleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoachDashboard.resx">
+      <DependentUpon>CoachDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
