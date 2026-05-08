@@ -23,7 +23,13 @@ namespace sport_stat_hub
             {
                 textBox2.PasswordChar = '*';
             }
+            comboBox1.Items.Add("Athlete");
+            comboBox1.Items.Add("Coach");
+            comboBox1.Items.Add("MedicalStaff");
+
+            comboBox1.SelectedIndex = 0; // optional default
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -34,21 +40,74 @@ namespace sport_stat_hub
         {
             Controller controller = new Controller();
 
-            DataTable dt = controller.CheckLogin(textBox1.Text, textBox2.Text);
+            string role = comboBox1.SelectedItem.ToString();
+            int id;
+            string password = textBox2.Text;
 
-            if (dt == null || dt.Rows.Count == 0)
+            if (!int.TryParse(textBox1.Text, out id))
             {
-                lblError.Text = "Invalid username or password!";
+                lblError.Text = "Invalid ID format!";
                 lblError.Visible = true;
+                return;
+            }
+
+            DataTable dt = null;
+
+            if (role == "Athlete")
+            {
+                dt = controller.AthleteLogin(id, password);
+            }
+            else if (role == "Coach")
+            {
+                dt = controller.CoachLogin(id, password);
+            }
+            else if (role == "MedicalStaff")
+            {
+                dt = controller.MedicalLogin(id, password);
             }
             else
             {
+                lblError.Text = "Please select a role!";
+                lblError.Visible = true;
+                return;
+            }
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
                 lblError.Visible = false;
 
-                AthleteForm f = new AthleteForm(textBox1.Text);
-                f.Show();
+                if (role == "Athlete")
+                {
+                    AthleteForm f = new AthleteForm(id);
+                    f.Show();
+                }
+                else if (role == "Coach")
+                {
+                    CoachDashboard f = new CoachDashboard();
+                    f.Show();
+                }
+                else if (role == "MedicalStaff")
+                {
+
+                   // MedicalForm f = new MedicalForm(id);
+                   // f.Show();
+                }
+
                 this.Hide();
             }
+            else
+            {
+                lblError.Text = "Invalid credentials!";
+                lblError.Visible = true;
+            }
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                textBox2.PasswordChar = '\0';  
+            else
+                textBox2.PasswordChar = '*';    
         }
     }
 }
