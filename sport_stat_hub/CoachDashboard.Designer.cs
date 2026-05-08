@@ -76,6 +76,7 @@
             this.tabReports = new System.Windows.Forms.TabPage();
             this.btnLogoutReport = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.cmbReportSelector = new System.Windows.Forms.ComboBox();
             this.dgvReportResults = new System.Windows.Forms.DataGridView();
@@ -99,7 +100,6 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label24 = new System.Windows.Forms.Label();
             this.tab1.SuspendLayout();
             this.tabProfile.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -175,7 +175,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Security";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtConfirmPassword
             // 
@@ -201,6 +200,7 @@
             this.btnUpdatePassword.TabIndex = 2;
             this.btnUpdatePassword.Text = "Update Password";
             this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
             // 
             // label12
             // 
@@ -250,6 +250,7 @@
             this.btnUpdateProfile.TabIndex = 3;
             this.btnUpdateProfile.Text = "Update My Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
+            this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
             // 
             // label3
             // 
@@ -303,9 +304,9 @@
             // dgvMyTeam
             // 
             this.dgvMyTeam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMyTeam.Location = new System.Drawing.Point(101, 91);
+            this.dgvMyTeam.Location = new System.Drawing.Point(101, 96);
             this.dgvMyTeam.Name = "dgvMyTeam";
-            this.dgvMyTeam.Size = new System.Drawing.Size(240, 150);
+            this.dgvMyTeam.Size = new System.Drawing.Size(460, 255);
             this.dgvMyTeam.TabIndex = 0;
             // 
             // tabTraining
@@ -371,6 +372,7 @@
             this.btnAddTraining.TabIndex = 3;
             this.btnAddTraining.Text = "Add Training Session";
             this.btnAddTraining.UseVisualStyleBackColor = true;
+            this.btnAddTraining.Click += new System.EventHandler(this.btnAddTrainingSession_Click);
             // 
             // numDuration
             // 
@@ -382,6 +384,11 @@
             // cmbFocusArea
             // 
             this.cmbFocusArea.FormattingEnabled = true;
+            this.cmbFocusArea.Items.AddRange(new object[] {
+            "Tactics",
+            "Fitness",
+            "Practice Matches",
+            "Skills Training"});
             this.cmbFocusArea.Location = new System.Drawing.Point(32, 57);
             this.cmbFocusArea.Name = "cmbFocusArea";
             this.cmbFocusArea.Size = new System.Drawing.Size(121, 21);
@@ -522,6 +529,7 @@
             this.btnSaveStats.TabIndex = 4;
             this.btnSaveStats.Text = "Save Performance";
             this.btnSaveStats.UseVisualStyleBackColor = true;
+            this.btnSaveStats.Click += new System.EventHandler(this.btnSavePerformance_Click);
             // 
             // numAssists
             // 
@@ -589,6 +597,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Team Detailed Reports";
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(24, 43);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(69, 13);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "Report Type:";
+            // 
             // btnGenerate
             // 
             this.btnGenerate.Location = new System.Drawing.Point(48, 263);
@@ -597,18 +614,20 @@
             this.btnGenerate.TabIndex = 6;
             this.btnGenerate.Text = "Generate Report";
             this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerateReport_Click);
             // 
             // cmbReportSelector
             // 
             this.cmbReportSelector.FormattingEnabled = true;
             this.cmbReportSelector.Items.AddRange(new object[] {
-            "Squad Top Scores",
+            "Squad Top Scorers",
             "Full Injury List",
             "Training Attendance"});
             this.cmbReportSelector.Location = new System.Drawing.Point(111, 40);
             this.cmbReportSelector.Name = "cmbReportSelector";
             this.cmbReportSelector.Size = new System.Drawing.Size(121, 21);
             this.cmbReportSelector.TabIndex = 0;
+            this.cmbReportSelector.SelectedIndexChanged += new System.EventHandler(this.cmbReportSelector_SelectedIndexChanged);
             // 
             // dgvReportResults
             // 
@@ -617,7 +636,6 @@
             this.dgvReportResults.Name = "dgvReportResults";
             this.dgvReportResults.Size = new System.Drawing.Size(240, 150);
             this.dgvReportResults.TabIndex = 3;
-            this.dgvReportResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReportResults_CellContentClick);
             // 
             // groupBox2
             // 
@@ -639,7 +657,7 @@
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Location = new System.Drawing.Point(23, 37);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(271, 171);
+            this.groupBox2.Size = new System.Drawing.Size(285, 171);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Season Summary";
@@ -817,15 +835,6 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(24, 43);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(69, 13);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "Report Type:";
             // 
             // CoachDashboard
             // 

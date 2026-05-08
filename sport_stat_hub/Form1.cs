@@ -83,13 +83,13 @@ namespace sport_stat_hub
                 }
                 else if (role == "Coach")
                 {
-                    CoachDashboard f = new CoachDashboard();
+                    CoachDashboard f = new CoachDashboard(id);
                     f.Show();
                 }
                 else if (role == "MedicalStaff")
                 {
 
-                   Medical_Dashboard f = new Medical_Dashboard();
+                   Medical_Dashboard f = new Medical_Dashboard(id);
                    f.Show();
                 }
 
