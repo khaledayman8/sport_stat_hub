@@ -89,8 +89,8 @@ namespace sport_stat_hub
                 else if (role == "MedicalStaff")
                 {
 
-                   // MedicalForm f = new MedicalForm(id);
-                   // f.Show();
+                   Medical_Dashboard f = new Medical_Dashboard();
+                   f.Show();
                 }
 
                 this.Hide();

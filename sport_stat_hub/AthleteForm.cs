@@ -33,11 +33,23 @@ namespace sport_stat_hub
 
             DataTable dt = controllerObj.GetFullAthleteStats(athleteID);
             dataGridView1.DataSource = dt;
+
+            DataTable dt1 = controllerObj.GetPreviousMatches(athleteID);
+            dataGridView2.DataSource = dt1;
+
+            DataTable dt2 = controllerObj.GetUpcomingMatches(athleteID);
+            dataGridView4.DataSource = dt2;
+
+            DataTable dt3 = controllerObj.GetAthleteTraining(athleteID);
+            dataGridView3.DataSource = dt3;
+
+            DataTable dt4 = controllerObj.GetAthleteInjuries(athleteID);
+            dataGridView5.DataSource = dt4;
         }
 
         private void LoadAthleteData()
         {
-            DataTable dt = controllerObj.GetAthleteByID(athleteID);
+            DataTable dt = controllerObj.GetAthleteProfile(athleteID);
 
             if (dt.Rows.Count > 0)
             {
@@ -47,10 +59,21 @@ namespace sport_stat_hub
 
                 label6.Text = dt.Rows[0]["Weight"].ToString();
 
+                label13.Text = dt.Rows[0]["TeamName"].ToString();
+
+                label14.Text = dt.Rows[0]["LeagueName"].ToString();
+
+                label15.Text = dt.Rows[0]["TotalGoals"].ToString();
+
+                label16.Text = dt.Rows[0]["TotalAssists"].ToString();
+
                 label4.Visible = true;
                 label5.Visible = true;
                 label6.Visible = true;
-
+                label13.Visible = true;
+                label14.Visible = true;
+                label15.Visible = true;
+                label16.Visible = true;
             }
             else
             {
@@ -109,6 +132,18 @@ namespace sport_stat_hub
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.Show();
         }
     }
 }

@@ -54,5 +54,10 @@ namespace sport_stat_hub
             Form1 login = new Form1();
             login.Show();
         }
+
+        private void txtMedicalName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
