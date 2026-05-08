@@ -16,5 +16,10 @@ namespace sport_stat_hub
         {
             InitializeComponent();
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
