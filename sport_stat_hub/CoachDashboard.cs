@@ -127,5 +127,10 @@ namespace sport_stat_hub
         {
 
         }
+
+        private void CoachDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

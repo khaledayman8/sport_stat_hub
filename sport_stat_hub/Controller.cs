@@ -10,10 +10,12 @@ namespace DBapplication
 
         public Controller()
         {
-            string connString =
-            @"Data Source=DESKTOP-SJMB0TS;Initial Catalog=Sports_Hub;Integrated Security=True";
+            // Use "." to point to your local SQL Server. 
+            // Added TrustServerCertificate=True to handle connection security.
+            string connString = @"Data Source=.;Initial Catalog=Sports_Hub;Integrated Security=True;TrustServerCertificate=True";
             dbMan = new DBManager(connString);
         }
+
 
         public void TerminateConnection()
         {
@@ -40,6 +42,22 @@ namespace DBapplication
         public DataTable AdminLogin(int id, string password)
         {
             string query = $"SELECT * FROM Admin WHERE AdminID = {id} AND Password = '{password}'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetAllUsers()
+        {
+            // This query combines Role, ID, and Name from all 4 tables
+            string query = @"
+        SELECT 'Athlete' AS [Role], AthleteID AS [ID], AthleteName AS [Name] FROM Athlete
+        UNION
+        SELECT 'Coach', CoachID, CoachName FROM Coach
+        UNION
+        SELECT 'MedicalStaff', StaffID, StaffName FROM MedicalStaff
+        UNION
+        SELECT 'Admin', AdminID, AdminName FROM Admin
+        ORDER BY [Role], [Name]";
+
             return dbMan.ExecuteReader(query);
         }
 

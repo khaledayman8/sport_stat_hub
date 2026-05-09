@@ -85,22 +85,19 @@ namespace sport_stat_hub
                 if (role == "Athlete")
                 {
                     AthleteForm f = new AthleteForm(id);
-                    f.Show();
                 }
                 else if (role == "Coach")
                 {
                     CoachDashboard f = new CoachDashboard(id);
-                    f.Show();
                 }
                 else if (role == "MedicalStaff")
                 {
                     Medical_Dashboard f = new Medical_Dashboard(id);
-                    f.Show();
                 }
                 else if (role == "Admin")
                 {
-                    Form2 f = new Form2();
-                    f.Show();
+                    Form2 adminForm = new Form2(); 
+                    adminForm.Show();
                 }
 
                 this.Hide();
@@ -118,6 +115,11 @@ namespace sport_stat_hub
                 textBox2.PasswordChar = '\0';  
             else
                 textBox2.PasswordChar = '*';    
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

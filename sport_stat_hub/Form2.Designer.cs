@@ -66,6 +66,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -92,8 +94,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -189,7 +189,6 @@
             this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -504,6 +503,22 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sign New Contract";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Enter ID Number:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(310, 94);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 11;
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(74, 419);
@@ -772,22 +787,6 @@
             this.label27.Size = new System.Drawing.Size(215, 18);
             this.label27.TabIndex = 7;
             this.label27.Text = "Minimum Contract Duration";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(310, 94);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Enter ID Number:";
             // 
             // Form2
             // 
