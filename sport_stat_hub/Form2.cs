@@ -15,7 +15,7 @@ namespace sport_stat_hub
     public partial class Form2 : Form
     {
         // 1. The Bridge Address
-        private string myConnectionAddress = @"Data Source=DESKTOP-V5R0TTC;Initial Catalog=Sports_Hub;Integrated Security=True;TrustServerCertificate=True";
+        private string myConnectionAddress = @"Data Source=DESKTOP-SJMB0TS;Initial Catalog=Sports_Hub;Integrated Security=True;TrustServerCertificate=True";
 
         // 2. The Kitchen Manager
         private DBManager dbManager;
@@ -23,7 +23,7 @@ namespace sport_stat_hub
         public Form2()
         {
             InitializeComponent();
-            dbManager = new DBManager(myConnectionAddress);
+            //dbManager = new DBManager(myConnectionAddress);
         }
 
         // ==========================================
@@ -244,13 +244,13 @@ namespace sport_stat_hub
             try
             {
                 // We try a very simple query just to say "Hello" to SQL
-                dbManager.ExecuteScalar("SELECT 1");
-                this.Text = "Admin Form - [CONNECTED TO SQL]"; // Changes the window title
+                //dbManager.ExecuteScalar("SELECT 1");
+                //this.Text = "Admin Form - [CONNECTED TO SQL]"; // Changes the window title
             }
             catch (Exception ex)
             {
-                MessageBox.Show("CONNECTION FAILED!\nCheck your Server Name.\nError: " + ex.Message);
-                this.Text = "Admin Form - [CONNECTION FAILED]";
+                //MessageBox.Show("CONNECTION FAILED!\nCheck your Server Name.\nError: " + ex.Message);
+                //this.Text = "Admin Form - [CONNECTION FAILED]";
             }
         }
 

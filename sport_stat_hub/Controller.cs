@@ -10,9 +10,8 @@ namespace DBapplication
 
         public Controller()
         {
-            string connString = @"Data Source=DESKTOP-FD4L62I;Initial Catalog=Sports_Hub;Integrated Security=True";
-
-            // 3. Initialize the manager ONLY here
+            string connString =
+            @"Data Source=DESKTOP-SJMB0TS;Initial Catalog=Sports_Hub;Integrated Security=True";
             dbMan = new DBManager(connString);
         }
 
@@ -35,6 +34,12 @@ namespace DBapplication
         public DataTable MedicalLogin(int id, string password)
         {
             string query = $"SELECT * FROM MedicalStaff WHERE StaffID = {id} AND Password = '{password}'";
+            return dbMan.ExecuteReader(query);
+        }
+        
+        public DataTable AdminLogin(int id, string password)
+        {
+            string query = $"SELECT * FROM Admin WHERE AdminID = {id} AND Password = '{password}'";
             return dbMan.ExecuteReader(query);
         }
 

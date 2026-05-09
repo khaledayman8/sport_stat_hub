@@ -26,6 +26,8 @@ namespace sport_stat_hub
             comboBox1.Items.Add("Athlete");
             comboBox1.Items.Add("Coach");
             comboBox1.Items.Add("MedicalStaff");
+            comboBox1.Items.Add("Admin");
+
 
             comboBox1.SelectedIndex = 0; // optional default
         }
@@ -65,6 +67,10 @@ namespace sport_stat_hub
             {
                 dt = controller.MedicalLogin(id, password);
             }
+            else if (role == "Admin")
+            {
+                dt = controller.AdminLogin(id, password);
+            }
             else
             {
                 lblError.Text = "Please select a role!";
@@ -88,9 +94,13 @@ namespace sport_stat_hub
                 }
                 else if (role == "MedicalStaff")
                 {
-
-                   Medical_Dashboard f = new Medical_Dashboard(id);
-                   f.Show();
+                    Medical_Dashboard f = new Medical_Dashboard(id);
+                    f.Show();
+                }
+                else if (role == "Admin")
+                {
+                    Form2 f = new Form2();
+                    f.Show();
                 }
 
                 this.Hide();
