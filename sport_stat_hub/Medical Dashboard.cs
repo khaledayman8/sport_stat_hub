@@ -31,8 +31,7 @@ namespace sport_stat_hub
                     txtMedicalCertID.Text = dt.Rows[0]["CertificationID"].ToString();
                 }
 
-              
-                cmbInjuryAthlete.DataSource = controllerObj.GetAthletesList(1);
+                cmbInjuryAthlete.DataSource = controllerObj.GetGlobalAthletesList();
                 cmbInjuryAthlete.DisplayMember = "AthleteName";
                 cmbInjuryAthlete.ValueMember = "AthleteID";
 

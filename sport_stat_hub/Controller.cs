@@ -10,7 +10,7 @@ namespace DBapplication
 
         public Controller()
         {
- 
+
             string connString = @"Data Source=.;Initial Catalog=Sports_Hub;Integrated Security=True;TrustServerCertificate=True";
             dbMan = new DBManager(connString);
         }
@@ -278,9 +278,9 @@ namespace DBapplication
 
             string query = $@"SELECT A.AthleteName, A.Position, A.Height, A.Weight 
                       FROM Athlete A 
-                      JOIN Team T ON A.TeamID = T.TeamID 
-                      JOIN Coach C ON T.LeagueID = C.LeagueID 
+                      JOIN Coach C ON A.TeamID = C.TeamID 
                       WHERE C.CoachID = {coachId}";
+
             return dbMan.ExecuteReader(query);
         }
         public int GetTeamIDFromCoach(int coachId)
@@ -432,7 +432,8 @@ namespace DBapplication
         SELECT 
             A.AthleteName AS [Player Name], 
             CONVERT(VARCHAR, TS.SessionDate, 111) AS [Session Date],
-            T.TeamName AS [Team]
+           
+T.TeamName AS [Team]
         FROM Athlete A
         JOIN Athlete_Attends_Training AT ON A.AthleteID = AT.AthleteID
         JOIN TrainingSessions TS ON AT.SessionID = TS.SessionID
@@ -440,6 +441,13 @@ namespace DBapplication
         WHERE A.TeamID = {teamId}
         ORDER BY TS.SessionDate DESC, A.AthleteName ASC";
 
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetGlobalAthletesList()
+        {
+           
+            string query = "SELECT AthleteID, AthleteName FROM Athlete ORDER BY AthleteName ASC";
             return dbMan.ExecuteReader(query);
         }
     }

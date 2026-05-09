@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DBapplication
 {
@@ -47,11 +48,19 @@ namespace DBapplication
 
         public object ExecuteScalar(string query)
         {
-            using (SqlConnection conn = CreateConnection())
-            using (SqlCommand cmd = new SqlCommand(query, conn))
+            try
             {
-                conn.Open();
-                return cmd.ExecuteScalar();
+                using (SqlConnection conn = CreateConnection())
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    return cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("DB Error: " + ex.Message); 
+                return null;
             }
         }
     }
