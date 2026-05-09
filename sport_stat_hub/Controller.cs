@@ -10,8 +10,7 @@ namespace DBapplication
 
         public Controller()
         {
-            // Use "." to point to your local SQL Server. 
-            // Added TrustServerCertificate=True to handle connection security.
+ 
             string connString = @"Data Source=.;Initial Catalog=Sports_Hub;Integrated Security=True;TrustServerCertificate=True";
             dbMan = new DBManager(connString);
         }
@@ -19,7 +18,7 @@ namespace DBapplication
 
         public void TerminateConnection()
         {
-            // nothing required now (connections are auto-closed)
+      
         }
         public DataTable AthleteLogin(int id, string password)
         {
@@ -47,7 +46,7 @@ namespace DBapplication
 
         public DataTable GetAllUsers()
         {
-            // This query combines Role, ID, and Name from all 4 tables
+          
             string query = @"
         SELECT 'Athlete' AS [Role], AthleteID AS [ID], AthleteName AS [Name] FROM Athlete
         UNION
