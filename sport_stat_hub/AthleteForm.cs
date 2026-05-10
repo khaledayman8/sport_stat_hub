@@ -37,9 +37,6 @@ namespace sport_stat_hub
             DataTable dt1 = controllerObj.GetPreviousMatches(athleteID);
             dataGridView2.DataSource = dt1;
 
-            DataTable dt2 = controllerObj.GetUpcomingMatches(athleteID);
-            dataGridView4.DataSource = dt2;
-
             DataTable dt3 = controllerObj.GetAthleteTraining(athleteID);
             dataGridView3.DataSource = dt3;
 
