@@ -11,27 +11,25 @@ namespace sport_stat_hub
 
         public Form2()
         {
-            InitializeComponent(); // DO NOT DELETE THIS LINE
+            InitializeComponent(); 
 
-            // 1. Setup connection
+         
             string connStr = @"Data Source=.;Initial Catalog=Sports_Hub;Integrated Security=True;TrustServerCertificate=True";
             dbManager = new DBManager(connStr);
 
-            // 2. FORCE the messages to show up here
+         
             MessageBox.Show("1. Form2 Constructor is running!");
 
-            // 3. Trigger the list refresh
+         
             RefreshUserList();
         }
 
-        // ==========================================
-        // NEW METHOD: REFRESH THE USER LIST
-        // ==========================================
+
         public void RefreshUserList()
         {
             try
             {
-                // Get the data
+              
                 DataTable dt = dbManager.ExecuteReader(@"
             SELECT 'Athlete' AS [Role], AthleteID AS [ID], AthleteName AS [Name] FROM Athlete
             UNION
@@ -41,19 +39,19 @@ namespace sport_stat_hub
             UNION
             SELECT 'Admin', AdminID, AdminName FROM Admin");
 
-                // Put the data in the box (dataGridView1)
+             
                 dataGridView1.DataSource = dt;
             }
             catch (Exception ex)
             {
-                // If this pops up, we know the SQL query failed
+             
                 MessageBox.Show("Refresh Error: " + ex.Message);
             }
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // 1. Check if the Load event even triggers
+           
             MessageBox.Show("1. The Load Event is running!");
 
             try
@@ -67,10 +65,9 @@ namespace sport_stat_hub
             UNION
             SELECT 'Admin', AdminID, AdminName FROM Admin");
 
-                // 2. Check if SQL actually gives data to C#
+               
                 MessageBox.Show("2. SQL found " + dt.Rows.Count + " rows.");
 
-                // 3. Check if the box exists
                 if (dataGridView1 == null)
                 {
                     MessageBox.Show("3. ERROR: dataGridView1 does not exist in code!");
@@ -81,7 +78,7 @@ namespace sport_stat_hub
                     dataGridView1.DataSource = dt;
                     MessageBox.Show("4. Data assigned to " + dataGridView1.Name);
 
-                    // 5. Check if the box is actually on the first tab
+                 
                     MessageBox.Show("5. Parent of box is: " + dataGridView1.Parent.Name);
                 }
             }
@@ -91,9 +88,7 @@ namespace sport_stat_hub
             }
         }
 
-        // ==========================================
-        // TAB 1: USER MANAGEMENT (REGISTER PEOPLE)
-        // ==========================================
+ 
         private void button1_Click(object sender, EventArgs e)
         {
             string fullName = textBox1.Text;
@@ -131,9 +126,6 @@ namespace sport_stat_hub
             }
         }
 
-        // ==========================================
-        // TAB 2: STRUCTURE (LEAGUES & TEAMS)
-        // ==========================================
         private void button2_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -168,7 +160,7 @@ namespace sport_stat_hub
         {
             Random rnd = new Random();
             int id = rnd.Next(10, 1000);
-            // FIXED: Your SQL now has a Capacity column, let's use it
+           
             string query = $"INSERT INTO Stadium (StadiumID, StadiumName, Location, Capacity) VALUES ({id}, '{textBox10.Text}', 'Local City', {textBox11.Text})";
 
             try
@@ -180,9 +172,7 @@ namespace sport_stat_hub
             catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
 
-        // ==========================================
-        // TAB 3: CONTRACTS (FINANCE)
-        // ==========================================
+
         private void button5_Click(object sender, EventArgs e)
         {
             string role = comboBox3.Text;
@@ -212,9 +202,6 @@ namespace sport_stat_hub
             }
         }
 
-        // ==========================================
-        // TAB 4: REPORTS (DASHBOARD)
-        // ==========================================
         private void button6_Click(object sender, EventArgs e)
         {
             try
@@ -227,7 +214,6 @@ namespace sport_stat_hub
                 label26.Text = dbManager.ExecuteScalar("SELECT COUNT(*) FROM Match").ToString();
                 label27.Text = dbManager.ExecuteScalar("SELECT COUNT(*) FROM League").ToString();
 
-                // Update User List too
                 RefreshUserList();
 
                 MessageBox.Show("Dashboard and User List Updated!");
@@ -257,6 +243,11 @@ namespace sport_stat_hub
         private void button8_Click(object sender, EventArgs e)
         {
             RefreshUserList();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -85,14 +85,17 @@ namespace sport_stat_hub
                 if (role == "Athlete")
                 {
                     AthleteForm f = new AthleteForm(id);
+                    f.Show();
                 }
                 else if (role == "Coach")
                 {
                     CoachDashboard f = new CoachDashboard(id);
+                    f.Show();
                 }
                 else if (role == "MedicalStaff")
                 {
                     Medical_Dashboard f = new Medical_Dashboard(id);
+                    f.Show();
                 }
                 else if (role == "Admin")
                 {

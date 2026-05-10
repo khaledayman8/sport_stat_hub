@@ -132,5 +132,10 @@ namespace sport_stat_hub
         {
 
         }
+
+        private void tabProfile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
