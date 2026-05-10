@@ -146,7 +146,7 @@
             this.tabProfile.Controls.Add(this.label1);
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
             this.tabProfile.Size = new System.Drawing.Size(799, 424);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "Profile";
@@ -286,7 +286,7 @@
             this.tabTeam.Controls.Add(this.dgvMyTeam);
             this.tabTeam.Location = new System.Drawing.Point(4, 22);
             this.tabTeam.Name = "tabTeam";
-            this.tabTeam.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabTeam.Padding = new System.Windows.Forms.Padding(3);
             this.tabTeam.Size = new System.Drawing.Size(799, 424);
             this.tabTeam.TabIndex = 1;
             this.tabTeam.Text = "Team";
@@ -323,7 +323,7 @@
             this.tabTraining.Controls.Add(this.dtpTrainingDate);
             this.tabTraining.Location = new System.Drawing.Point(4, 22);
             this.tabTraining.Name = "tabTraining";
-            this.tabTraining.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabTraining.Padding = new System.Windows.Forms.Padding(3);
             this.tabTraining.Size = new System.Drawing.Size(799, 424);
             this.tabTraining.TabIndex = 2;
             this.tabTraining.Text = "Training";
@@ -423,7 +423,7 @@
             this.tabMatchStats.Controls.Add(this.cmbSelectMatch);
             this.tabMatchStats.Location = new System.Drawing.Point(4, 22);
             this.tabMatchStats.Name = "tabMatchStats";
-            this.tabMatchStats.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabMatchStats.Padding = new System.Windows.Forms.Padding(3);
             this.tabMatchStats.Size = new System.Drawing.Size(799, 424);
             this.tabMatchStats.TabIndex = 3;
             this.tabMatchStats.Text = "Match Stats";
@@ -570,7 +570,7 @@
             this.tabReports.Controls.Add(this.groupBox2);
             this.tabReports.Location = new System.Drawing.Point(4, 22);
             this.tabReports.Name = "tabReports";
-            this.tabReports.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
             this.tabReports.Size = new System.Drawing.Size(799, 424);
             this.tabReports.TabIndex = 4;
             this.tabReports.Text = "Reports";
@@ -594,7 +594,7 @@
             this.groupBox3.Controls.Add(this.dgvReportResults);
             this.groupBox3.Location = new System.Drawing.Point(314, 37);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(392, 292);
+            this.groupBox3.Size = new System.Drawing.Size(427, 292);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Team Detailed Reports";
@@ -637,7 +637,7 @@
             this.dgvReportResults.Location = new System.Drawing.Point(48, 90);
             this.dgvReportResults.Name = "dgvReportResults";
             this.dgvReportResults.RowHeadersWidth = 51;
-            this.dgvReportResults.Size = new System.Drawing.Size(240, 150);
+            this.dgvReportResults.Size = new System.Drawing.Size(338, 150);
             this.dgvReportResults.TabIndex = 3;
             // 
             // groupBox2
@@ -823,7 +823,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(0, 0);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "tabPage3";
@@ -833,7 +833,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(0, 0);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "tabPage4";

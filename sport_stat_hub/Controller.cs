@@ -11,7 +11,8 @@ namespace DBapplication
         public Controller()
         {
 
-            string connString = @"Data Source=.;Initial Catalog=Sports_Hub;Integrated Security=True;TrustServerCertificate=True";
+            string connString = @"Data Source=DESKTOP-FD4L62I;Initial Catalog=Sports_Hub;Integrated Security=True;TrustServerCertificate=True";
+            dbMan = new DBManager(connString);
             dbMan = new DBManager(connString);
         }
 

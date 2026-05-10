@@ -499,7 +499,7 @@
             this.groupBox3.Controls.Add(this.dgvMedicalReportResults);
             this.groupBox3.Location = new System.Drawing.Point(35, 227);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(500, 189);
+            this.groupBox3.Size = new System.Drawing.Size(649, 189);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detailed Reports";
@@ -541,7 +541,7 @@
             this.dgvMedicalReportResults.Location = new System.Drawing.Point(236, 14);
             this.dgvMedicalReportResults.Name = "dgvMedicalReportResults";
             this.dgvMedicalReportResults.RowHeadersWidth = 51;
-            this.dgvMedicalReportResults.Size = new System.Drawing.Size(240, 150);
+            this.dgvMedicalReportResults.Size = new System.Drawing.Size(407, 150);
             this.dgvMedicalReportResults.TabIndex = 3;
             // 
             // btnLogOutReports
