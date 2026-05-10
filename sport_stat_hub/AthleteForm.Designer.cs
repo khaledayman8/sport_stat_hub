@@ -30,6 +30,15 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,19 +56,9 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -69,8 +68,8 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -115,6 +114,88 @@
             this.tabPage1.Text = "Profile";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(714, 299);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(88, 32);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Log Out";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(213, 299);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 16);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "label16";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(213, 262);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 16);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "label15";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(213, 224);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 16);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "label14";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(213, 185);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 16);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "label13";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(98, 262);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 16);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Total Goals:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(93, 299);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 16);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Total Assists:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(87, 224);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 16);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "League Name:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(92, 185);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 16);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Team Name:";
             // 
             // label4
             // 
@@ -228,7 +309,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.dataGridView4);
             this.tabPage3.Controls.Add(this.dataGridView2);
@@ -247,7 +327,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(572, 358);
+            this.dataGridView2.Size = new System.Drawing.Size(890, 374);
             this.dataGridView2.TabIndex = 0;
             // 
             // tabPage4
@@ -282,34 +362,6 @@
             this.tabPage5.Text = "Injuries";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(679, 74);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(572, 358);
-            this.dataGridView4.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(250, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 16);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Previous Matches";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(903, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 16);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Upcoming Matches";
-            // 
             // dataGridView5
             // 
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -321,87 +373,24 @@
             this.dataGridView5.TabIndex = 0;
             this.dataGridView5.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellContentClick);
             // 
-            // label9
+            // label7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(92, 185);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 16);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Team Name:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(250, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 16);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Previous Matches";
             // 
-            // label10
+            // dataGridView4
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(87, 224);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 16);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "League Name:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(93, 299);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 16);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Total Assists:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(98, 262);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 16);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Total Goals:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(213, 185);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 16);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "label13";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(213, 224);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 16);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "label14";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(213, 262);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 16);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "label15";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(213, 299);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 16);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "label16";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(714, 299);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 32);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Log Out";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(1254, 493);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.RowTemplate.Height = 24;
+            this.dataGridView4.Size = new System.Drawing.Size(10, 10);
+            this.dataGridView4.TabIndex = 1;
             // 
             // AthleteForm
             // 
@@ -423,8 +412,8 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,9 +439,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -463,5 +449,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataGridView4;
     }
 }
