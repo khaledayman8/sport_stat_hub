@@ -122,7 +122,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1014, 543);
+            this.tabControl1.Size = new System.Drawing.Size(1014, 578);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -133,7 +133,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1006, 514);
+            this.tabPage1.Size = new System.Drawing.Size(1006, 549);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User Management";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -150,11 +150,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(127, 322);
+            this.dataGridView1.Location = new System.Drawing.Point(127, 294);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(717, 247);
             this.dataGridView1.TabIndex = 2;
             // 
             // groupBox1
@@ -792,7 +792,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 543);
+            this.ClientSize = new System.Drawing.Size(1014, 578);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form2";
             this.Text = "Admin Form ";
